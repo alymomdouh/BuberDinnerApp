@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinnerApp.Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinnerApp.Domain", "BuberDinnerApp.Domain\BuberDinnerApp.Domain.csproj", "{6FD00D5E-62C7-47F3-BD2F-E6E8AA298168}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{C0B636DE-9C91-439D-A58F-A62FC802C3D7}"
+	ProjectSection(SolutionItems) = preProject
+		Api.md = Api.md
+		DomainModels.md = DomainModels.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
