@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BuberDinnerApp.Infrastructure\BuberDinnerApp.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
