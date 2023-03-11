@@ -1,3 +1,5 @@
+using BuberDinnerApp.Application.Services.Authentication;
+
 namespace BuberDinnerApp.Api
 {
     public class Program
@@ -7,6 +9,8 @@ namespace BuberDinnerApp.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

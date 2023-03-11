@@ -1,4 +1,5 @@
-﻿using BuberDinnerApp.Contracts.Authentication;
+﻿using BuberDinnerApp.Application.Services.Authentication;
+using BuberDinnerApp.Contracts.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuberDinnerApp.Api.Controllers
@@ -7,15 +8,32 @@ namespace BuberDinnerApp.Api.Controllers
     [Route("auth")]
     public class AuthenticationController : ControllerBase
     {
+        private readonly IAuthenticationService iAuthenticationService;
+
+        public AuthenticationController(IAuthenticationService _iAuthenticationService)
+        {
+            iAuthenticationService = _iAuthenticationService;
+        }
+
         [HttpPost("register")]
         public IActionResult Register(RegisterRequest registerRequest)
         {
-            return Ok(registerRequest);
+            var authResult = iAuthenticationService.Register(
+                registerRequest.FirstName,
+                registerRequest.LastName,
+                registerRequest.Email,
+                registerRequest.Password
+                );
+            return Ok(authResult);
         }
         [HttpPost("login")]
         public IActionResult Login(LoginRequest loginRequest)
         {
-            return Ok(loginRequest);
+            var authResult = iAuthenticationService.Login(
+                loginRequest.Email,
+                loginRequest.Password
+                );
+            return Ok(authResult);
         }
     }
 }
