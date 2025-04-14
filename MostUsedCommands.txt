@@ -1,0 +1,5 @@
+>dotnet new sln -o BuberDinner
+>ls 
+>cd .\BuberDinner
+>dotnet new webapi -o BuberDinner.Api
+>dotnet new classlib -o BuberDinner.Contracts
